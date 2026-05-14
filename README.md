@@ -227,5 +227,5 @@ PhantomDroid generates:
 ---
 
 <div align="center">
-  Made with 💜 by <strong>Mr. Psycho</strong> | <a href="https://instagram.com/afifzad">@afifzad</a>
+  Made with by <strong>YaserAfifzad</strong> | <a href="https://instagram.com/afifzad">@afifzad</a>
 </div>
