@@ -1,24 +1,44 @@
-👻 PhantomDroid
-Advanced Android Penetration Testing Framework
-Instagram: @afifzad
+<div align="center">
 
-Version Python Platform License
+# 👻 PhantomDroid
+### Advanced Android Penetration Testing Framework
 
-⚠️ For authorized security testing and educational purposes only.
+**Instagram: [@afifzad](https://instagram.com/afifzad)
 
-📌 Overview
-PhantomDroid is a comprehensive, CLI-based Android security assessment framework targeting ethical hackers and professional penetration testers. It integrates multiple attack surfaces into a single tool with a hacker-aesthetic terminal interface.
+![Version](https://img.shields.io/badge/Version-2.0.0-blueviolet?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.8+-cyan?style=for-the-badge&logo=python)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS-magenta?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Educational-red?style=for-the-badge)
 
-🚀 Features
-Module	Description
-📱 Device Manager	List devices, device info, ADB WiFi, screenshot, logcat, file transfer
-🔎 APK Analyzer	Static decomposition: permissions, secrets, exported components, CVEs
-🌐 Network Scanner	Fast port scan, WiFi info, subnet discovery, MitM guide
-🚨 Vulnerability Scanner	CVE mapping, root detection, insecure storage, WebView, task hijacking
-💥 Exploit Engine	Activity launch, broadcast trigger, content provider dump, deep link fuzzer, shell dropper
-🎯 Payload Generator	msfvenom APK, reverse shell one-liners, ADB exploit scripts, obfuscation
-📋 Report Generator	Dark-themed HTML report + JSON + CLI table with remediation advice
-⚙️ Installation
+> ⚠️ **For authorized security testing and educational purposes only.**
+
+</div>
+
+---
+
+## 📌 Overview
+
+**PhantomDroid** is a comprehensive, CLI-based Android security assessment framework targeting ethical hackers and professional penetration testers. It integrates multiple attack surfaces into a single tool with a hacker-aesthetic terminal interface.
+
+---
+
+## 🚀 Features
+
+| Module | Description |
+|---|---|
+| 📱 **Device Manager** | List devices, device info, ADB WiFi, screenshot, logcat, file transfer |
+| 🔎 **APK Analyzer** | Static decomposition: permissions, secrets, exported components, CVEs |
+| 🌐 **Network Scanner** | Fast port scan, WiFi info, subnet discovery, MitM guide |
+| 🚨 **Vulnerability Scanner** | CVE mapping, root detection, insecure storage, WebView, task hijacking |
+| 💥 **Exploit Engine** | Activity launch, broadcast trigger, content provider dump, deep link fuzzer, shell dropper |
+| 🎯 **Payload Generator** | msfvenom APK, reverse shell one-liners, ADB exploit scripts, obfuscation |
+| 📋 **Report Generator** | Dark-themed HTML report + JSON + CLI table with remediation advice |
+
+---
+
+## ⚙️ Installation
+
+```bash
 # 1. Clone / navigate to the tool directory
 cd /path/to/phantomdroid
 # or
@@ -37,12 +57,21 @@ sudo pacman -S android-tools  # Arch
 
 # 5. (Optional for payload generation) Install Metasploit
 # https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html
-🖥️ Usage
-Interactive Mode (Recommended)
+```
+
+---
+
+## 🖥️ Usage
+
+### Interactive Mode (Recommended)
+```bash
 python3 phantomdroid.py
 # or
 python3 phantomdroid.py --interactive
-CLI Mode
+```
+
+### CLI Mode
+```bash
 # List connected devices
 python3 phantomdroid.py --devices
 
@@ -119,57 +148,84 @@ python3 phantomdroid.py --discover 192.168.1
 # Generate JSON + HTML report
 python3 phantomdroid.py --apk app.apk --device ABC123 --vuln-scan \
   --pkg com.example --report both --target-name "Example Corp App"
-🧩 Module Details
-APK Analyzer
-Permission audit — flags 30+ dangerous Android permissions by severity (CRITICAL → LOW)
-Hardcoded secrets — scans DEX, XML, JSON, JS for API keys, passwords, AWS keys, Firebase configs, DB URLs
-Exported components — activities, services, receivers, providers
-File hashes — MD5, SHA1, SHA256
-Obfuscation detection, native libraries, embedded URLs & IPs
-Vulnerability heuristics — debuggable flag, backup enabled, no network security config
-Vulnerability Scanner
-CVE Mapping — 30+ CVEs mapped to Android SDK levels (Stagefright, BlueBorne, StrandHogg, BlueFrag, etc.)
-Root detection — su binary, Magisk, SuperSU, debuggable build
-Frida detection — checks running processes for Frida server
-Insecure data storage — SharedPreferences, SQLite, world-readable files
-WebView checks — JS enabled, file:// access
-Task hijacking — StrandHogg-style taskAffinity check
-Exploit Engine
-Module	Description
-Activity Launch	Launch exported activities without permission
-Broadcast Trigger	Send malicious broadcast intents
-Content Provider	Dump arbitrary content provider data
-Deep Link Fuzzer	Fuzz 20+ deep link paths for unprotected endpoints
-Frida Injection	Step-by-step Frida/objection injection guide
-Reverse Shell Drop	Push & execute busybox/nc reverse shell via ADB
-DB Extractor	Pull SQLite databases from app data directory
-Lock Bypass	PIN brute force via ADB keyevents
-Payload Generator
-Type	Description
-reverse_tcp	msfvenom Android Meterpreter reverse TCP APK
-reverse_https	msfvenom HTTPS reverse shell APK
-reverse-shells	6 reverse shell one-liners (nc, bash, python3, perl, socat)
-adb-script	Full ADB exploitation shell script
-obfuscate	Base64 or hex payload obfuscation
-📋 Report Output
+```
+
+---
+
+## 🧩 Module Details
+
+### APK Analyzer
+- **Permission audit** — flags 30+ dangerous Android permissions by severity (CRITICAL → LOW)
+- **Hardcoded secrets** — scans DEX, XML, JSON, JS for API keys, passwords, AWS keys, Firebase configs, DB URLs
+- **Exported components** — activities, services, receivers, providers
+- **File hashes** — MD5, SHA1, SHA256
+- **Obfuscation detection**, native libraries, embedded URLs & IPs
+- **Vulnerability heuristics** — debuggable flag, backup enabled, no network security config
+
+### Vulnerability Scanner
+- **CVE Mapping** — 30+ CVEs mapped to Android SDK levels (Stagefright, BlueBorne, StrandHogg, BlueFrag, etc.)
+- **Root detection** — su binary, Magisk, SuperSU, debuggable build
+- **Frida detection** — checks running processes for Frida server
+- **Insecure data storage** — SharedPreferences, SQLite, world-readable files
+- **WebView checks** — JS enabled, file:// access
+- **Task hijacking** — StrandHogg-style taskAffinity check
+
+### Exploit Engine
+| Module | Description |
+|---|---|
+| Activity Launch | Launch exported activities without permission |
+| Broadcast Trigger | Send malicious broadcast intents |
+| Content Provider | Dump arbitrary content provider data |
+| Deep Link Fuzzer | Fuzz 20+ deep link paths for unprotected endpoints |
+| Frida Injection | Step-by-step Frida/objection injection guide |
+| Reverse Shell Drop | Push & execute busybox/nc reverse shell via ADB |
+| DB Extractor | Pull SQLite databases from app data directory |
+| Lock Bypass | PIN brute force via ADB keyevents |
+
+### Payload Generator
+| Type | Description |
+|---|---|
+| `reverse_tcp` | msfvenom Android Meterpreter reverse TCP APK |
+| `reverse_https` | msfvenom HTTPS reverse shell APK |
+| `reverse-shells` | 6 reverse shell one-liners (nc, bash, python3, perl, socat) |
+| `adb-script` | Full ADB exploitation shell script |
+| `obfuscate` | Base64 or hex payload obfuscation |
+
+---
+
+## 📋 Report Output
+
 PhantomDroid generates:
+- **HTML Report** — dark glassmorphism theme, severity badges, finding cards with CVE links and remediation advice
+- **JSON Report** — structured machine-readable output
+- **CLI Table** — quick terminal summary sorted by severity (CRITICAL → LOW)
 
-HTML Report — dark glassmorphism theme, severity badges, finding cards with CVE links and remediation advice
-JSON Report — structured machine-readable output
-CLI Table — quick terminal summary sorted by severity (CRITICAL → LOW)
-🔧 Requirements
-Requirement	Purpose
-Python 3.8+	Runtime
-rich	Terminal UI
-requests	HTTP checks
-ADB (optional)	Device interaction
-Metasploit (optional)	APK payload generation
-Frida (optional)	Runtime instrumentation
-mitmproxy (optional)	Traffic interception
-⚠️ Legal Disclaimer
-PhantomDroid is intended exclusively for authorized security assessments, CTF competitions, and educational research.
+---
 
-Unauthorized use of this tool against systems you do not own or have explicit written permission to test is illegal under the Computer Fraud and Abuse Act (CFAA), Computer Misuse Act, and equivalent laws in most jurisdictions.
+## 🔧 Requirements
 
-The author Mr. Psycho and contributors assume no liability for any misuse or damage caused by this tool.
+| Requirement | Purpose |
+|---|---|
+| Python 3.8+ | Runtime |
+| `rich` | Terminal UI |
+| `requests` | HTTP checks |
+| ADB (optional) | Device interaction |
+| Metasploit (optional) | APK payload generation |
+| Frida (optional) | Runtime instrumentation |
+| mitmproxy (optional) | Traffic interception |
 
+---
+
+## ⚠️ Legal Disclaimer
+
+> PhantomDroid is intended **exclusively** for authorized security assessments, CTF competitions, and educational research.
+> 
+> **Unauthorized use of this tool against systems you do not own or have explicit written permission to test is illegal** under the Computer Fraud and Abuse Act (CFAA), Computer Misuse Act, and equivalent laws in most jurisdictions.
+> 
+> The author **Mr. Psycho** and contributors assume **no liability** for any misuse or damage caused by this tool.
+
+---
+
+<div align="center">
+  Made with 💜 by <strong>Mr. Psycho</strong> | <a href="https://instagram.com/afifzad">@afifzad</a>
+</div>
